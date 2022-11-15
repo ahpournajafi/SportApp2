@@ -1,0 +1,57 @@
+﻿@page
+@model SportApp2.Pages.Person.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>نام:</label>
+        <input asp-for="person.Fname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>نام خانوادگی:</label>
+        <input asp-for="person.Lname" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>کد ملی:</label>
+        <input type="number" asp-for="person.Uniquecode" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>سن:</label>
+        <input asp-for="person.Age" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>قد:</label>
+        <input asp-for="person.Height" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>وزن:</label>
+        <input asp-for="person.Weight" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام گروه:</label>
+        <select class="form-control" asp-for="person.GroupId" asp-items="ViewBag.Group">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام دوره:</label>
+        <select class="form-control" asp-for="person.PeriodId" asp-items="ViewBag.Period">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام زیر گروه:</label>
+        <select class="form-control" asp-for="person.SubgroupId" asp-items="ViewBag.SubGroup">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام دسته:</label>
+        <select class="form-control" asp-for="person.BatcheId" asp-items="ViewBag.Batch">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <button type="button" class="btn btn-primary">بازگشت</button> 
+    <button type="submit" class="btn btn-success">ثبت</button>
+</form>

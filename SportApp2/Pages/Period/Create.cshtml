@@ -1,0 +1,19 @@
+﻿@page
+@model SportApp2.Pages.Period.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>نام دوره:</label>
+        <input asp-for="period.Name" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام گروه:</label>
+        <select class="form-control" asp-for="period.GroupId" asp-items="ViewBag.Group">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <button type="button" class="btn btn-primary">بازگشت</button> 
+    <button type="submit" class="btn btn-success">ثبت</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@page
+@model SportApp2.Pages.Batch.CreateModel
+@{
+}
+
+<form method="post">
+
+    <div class="form-group col-md-4">
+        <label>نام گروه:</label>
+        <select class="form-control" asp-for="batch.GroupId" asp-items="ViewBag.Group">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام زیر گروه:</label>
+        <select class="form-control" asp-for="batch.SubgroupId" asp-items="ViewBag.SubGroup">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+        <div class="form-group col-md-4">
+        <label>نام دوره:</label>
+        <select class="form-control" asp-for="batch.PeriodId" asp-items="ViewBag.Period">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>نام دسته:</label>
+        <input asp-for="batch.Name" class="form-control">
+    </div>
+    <button type="button" class="btn btn-primary">بازگشت</button>
+    <button type="submit" class="btn btn-success">ثبت</button>
+</form>

@@ -1,0 +1,13 @@
+﻿@page
+@model SportApp2.Pages.Group.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>نام گروه:</label>
+        <input asp-for="group.Name" class="form-control">
+    </div>
+    <button type="button" class="btn btn-primary">بازگشت</button> 
+    <button type="submit" class="btn btn-success">ثبت</button>
+</form>

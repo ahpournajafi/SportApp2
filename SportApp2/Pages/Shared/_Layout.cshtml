@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportApp</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap-rtl.css" />
+    <link href="~/lib/DataTable/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/DataTable/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SportApp.styles.css" asp-append-version="true" />
+</head>
+<body dir="rtl">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">SportApp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    تعاریف
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <a asp-page="@Url.Content("~/Person/Create")"><button class="dropdown-item" type="button">تعریف دانشجو</button></a>
+                                    <a asp-page="@Url.Content("~/ExamType/Create")"><button class="dropdown-item" type="button">تعریف آزمون</button></a>
+                                    <a asp-page="@Url.Content("~/Group/Create")"><button class="dropdown-item" type="button">تعریف گروه</button></a>
+                                    <a asp-page="@Url.Content("~/Period/Create")"><button class="dropdown-item" type="button">تعریف دوره</button></a>
+                                    <a asp-page="@Url.Content("~/Subgroup/Create")"><button class="dropdown-item" type="button">تعریف زیر گروه</button></a>
+                                    <a asp-page="@Url.Content("~/Batch/Create")"><button class="dropdown-item" type="button">تعریف دسته</button></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">ثبت آزمون</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    گزارشات
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                    <button class="dropdown-item" type="button">گزارش دانشجو</button>
+                                    <button class="dropdown-item" type="button">گزارش آزمون</button>
+                                    <button class="dropdown-item" type="button">گزارش گروه</button>
+                                    <button class="dropdown-item" type="button">گزارش دوره</button>
+                                    <button class="dropdown-item" type="button">گزارش زیر گروه</button>
+                                    <button class="dropdown-item" type="button">گزارش دسته</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">خروج</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - SportApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

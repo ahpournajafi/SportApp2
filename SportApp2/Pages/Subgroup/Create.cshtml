@@ -1,0 +1,25 @@
+﻿@page
+@model SportApp2.Pages.Subgroup.CreateModel
+@{
+}
+
+<form method="post">
+    <div class="form-group">
+        <label>نام زیرگروه:</label>
+        <input asp-for="subgroup.Name" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام گروه:</label>
+        <select class="form-control" asp-for="subgroup.GroupId" asp-items="ViewBag.Group">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <div class="form-group col-md-4">
+        <label>نام دوره:</label>
+        <select class="form-control" asp-for="subgroup.PeriodId" asp-items="ViewBag.Period">
+            <option selected>انتخاب...</option>
+        </select>
+    </div>
+    <button type="button" class="btn btn-primary">بازگشت</button>
+    <button type="submit" class="btn btn-success">ثبت</button>
+</form>
